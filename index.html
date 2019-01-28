@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Test Form</h1>
+
+    <button id="testButton">Send Test Request</button>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("document ready");
+
+        $("#testButton").click(function(){
+          console.log("test button clicked");
+          
+          $.post("https://www.passsource.com/pass/register.php?templateId=5", {
+            psForm_0_structure_primaryFields_primary_label: 'name', 
+            psForm_0_structure_primaryFields_primary_value: 'Finn Shark',
+            psForm_0_structure_secondaryFields_secondary_label: 'status',
+            psForm_0_structure_secondaryFields_secondary_value: 'Student/Employee',
+            psForm_0_structure_auxiliaryFields_level_label: 'Id',
+            psForm_0_structure_auxiliaryFields_level_value: '1234567890',
+            psForm_0_backgroundColor: '#f882ee',
+            psForm_0_foregroundColor: '#ffffff',
+            psForm_0_logoText: 'MD Card',
+            psForm_0_barcode_format: 'PDF417',
+            psForm_0_barcode_message: '{hashedSerialNumber}'
+          }).done(function( data ) {
+            console.log("Received Data", data);
+          });  
+        });
+      });
+    </script>
+  </body>
+</html>

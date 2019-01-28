@@ -1,0 +1,62 @@
+var request = require('request');
+
+console.log("Hello World");
+
+
+require('request-debug')(request, function(type, data, r){
+	if (type === 'request'){
+		console.log("headers")
+		console.log(data.headers)
+		console.log("-----------------")
+	
+		console.log("body")
+		console.log(data.body)
+		console.log("-----------------")
+
+		console.log("request")
+		console.log(r)
+		console.log("-----------------")
+	}
+});
+
+
+var formData = {
+  psForm_0_structure_primaryFields_primary_label: 'name', 
+  psForm_0_structure_primaryFields_primary_value: 'Finn Shark',
+  psForm_0_structure_secondaryFields_secondary_label: 'status',
+  psForm_0_structure_secondaryFields_secondary_value: 'Student/Employee',
+  psForm_0_structure_auxiliaryFields_level_label: 'Id',
+  psForm_0_structure_auxiliaryFields_level_value: '1234567890',
+  psForm_0_backgroundColor: '#f882ee',
+  psForm_0_foregroundColor: '#ffffff',
+  psForm_0_logoText: 'MD Card',
+  psForm_0_barcode_format: 'PDF417',
+  psForm_0_barcode_message: '{hashedSerialNumber}'
+};
+
+var headers = {
+  //content-type: 'multipart/form-data; boundary=----WebKitFormBoundaryJ2UKvgfyEl2ZfOwz',
+  'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+}
+
+request.post({
+	url: 'https://www.passsource.com/pass/register.php?templateId=5',
+	followRedirect: false,
+	headers: headers,
+	formData: formData
+}, function(err, httpResponse, body){ 
+	if (err) {
+    return console.error('POST failed:', err);
+  }
+
+  console.log('POST successful! Server responded with:');
+  // console.log("BODY")
+  // console.log('----------------------------------------');
+  // console.log(body)
+
+  // console.log("RESPONSE")
+  // console.log('----------------------------------------');
+  // console.log(httpResponse);
+
+  console.log(httpResponse.statusCode);
+});
