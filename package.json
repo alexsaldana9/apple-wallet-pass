@@ -6,6 +6,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "passkit-generator": "^1.5.5",
     "redirect": "^0.2.0",
     "request": "^2.88.0",
     "request-debug": "^0.2.0"

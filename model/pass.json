@@ -1,0 +1,46 @@
+{
+    "formatVersion": 1,
+    "passTypeIdentifier": "pass.com.apple.devpubs.example",
+    "serialNumber": "E5982H-I2",
+    "teamIdentifier": "32S99QWNCQ",
+    "webServiceURL": "https://example.com/passes/",
+    "authenticationToken": "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+    "barcode": {
+        "message": "123456789",
+        "format": "PKBarcodeFormatPDF417",
+        "messageEncoding": "iso-8859-1"
+    },
+    "organizationName": "Miami Dade College",
+    "description": "MyMDC Card",
+    "logoText": "MyMDC Card",
+    "foregroundColor": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(206, 140, 53)",
+    "primaryFields": [
+        {
+        "key" : "mdcID",
+            "label": "My MDC ID",
+            "value": "123456"
+        }
+    ],
+  "secondaryFields" : [
+      {
+        "key": "relation",
+        "label": "Employee or Student",
+        "value": "Employee/Student"
+    }
+],
+  "thumbnail" : [
+    {
+        "key": "idPhoto",
+        "label": "photo",
+        "value": "photo file.png"
+    }
+],
+"barcodes": [
+    {
+        "message": "ABCD 123 EFGH 456 IJKL 789 MNOP",
+        "format": "PKBarcodeFormatPDF417",
+        "messageEncoding": "iso-8859-1"
+    }
+]
+}
