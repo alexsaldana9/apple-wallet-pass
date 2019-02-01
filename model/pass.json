@@ -1,6 +1,6 @@
 {
     "formatVersion": 1,
-    "passTypeIdentifier": "pass.com.apple.devpubs.example",
+    "passTypeIdentifier": "pass.edu.mdc.studentid",
     "serialNumber": "E5982H-I2",
     "teamIdentifier": "32S99QWNCQ",
     "webServiceURL": "https://example.com/passes/",
